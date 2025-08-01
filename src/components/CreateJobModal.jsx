@@ -94,7 +94,7 @@ export default function CreateJobModal({ onClose, onJobCreated }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-white/30 backdrop-blur-md flex justify-center items-start pt-[117px] z-10">
+    <div className="fixed inset-0 bg-white/30 backdrop-blur-md flex justify-center items-center z-10 p-4">
       <div className="w-[848px] bg-white rounded-[16px] shadow-[0px_0px_24px_rgba(169,169,169,0.25)] p-[40px] space-y-6 relative">
         <h2 className="text-[24px] leading-[32px] font-bold text-center text-[#222]">
           Create Job Opening
