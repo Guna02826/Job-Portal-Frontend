@@ -27,7 +27,6 @@ export default function CreateJobModal({ onClose, onJobCreated }) {
   };
 
   const handleSubmit = async () => {
-    // Basic required field check
     const fields = [
       "title",
       "companyName",
@@ -46,7 +45,6 @@ export default function CreateJobModal({ onClose, onJobCreated }) {
       }
     }
 
-    // Salary check
     const min = Number(form.salaryMin);
     const max = Number(form.salaryMax);
 
@@ -95,12 +93,12 @@ export default function CreateJobModal({ onClose, onJobCreated }) {
 
   return (
     <div className="fixed inset-0 bg-white/30 backdrop-blur-md flex justify-center items-center z-10 p-4">
-      <div className="w-[848px] bg-white rounded-[16px] shadow-[0px_0px_24px_rgba(169,169,169,0.25)] p-[40px] space-y-6 relative">
-        <h2 className="text-[24px] leading-[32px] font-bold text-center text-[#222]">
+      <div className="w-full max-w-[848px] bg-white rounded-[16px] shadow-[0px_0px_24px_rgba(169,169,169,0.25)] p-6 md:p-10 space-y-6 relative max-h-screen overflow-y-auto">
+        <h2 className="text-[20px] md:text-[24px] leading-[28px] md:leading-[32px] font-bold text-center text-[#222]">
           Create Job Opening
         </h2>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6">
           <Input
             label="Job Title"
             name="title"
@@ -167,16 +165,16 @@ export default function CreateJobModal({ onClose, onJobCreated }) {
           />
         </div>
 
-        <div className="flex justify-between pt-4">
+        <div className="flex flex-col md:flex-row justify-between gap-4 pt-4">
           <button
             onClick={handleDraft}
-            className="w-[232px] h-[59px] bg-white text-[#222] font-semibold text-[20px] rounded-[10px] shadow border border-[#222]"
+            className="w-full md:w-[232px] h-[59px] bg-white text-[#222] font-semibold text-[20px] rounded-[10px] shadow border border-[#222]"
           >
             Save Draft
           </button>
           <button
             onClick={handleSubmit}
-            className="w-[207px] h-[59px] bg-[#00AAFF] text-white font-semibold text-[20px] rounded-[10px]"
+            className="w-full md:w-[207px] h-[59px] bg-[#00AAFF] text-white font-semibold text-[20px] rounded-[10px]"
           >
             Publish
           </button>
@@ -186,7 +184,6 @@ export default function CreateJobModal({ onClose, onJobCreated }) {
   );
 }
 
-// Helper components (optional, for readability)
 function Input({
   label,
   name,
